@@ -99,8 +99,7 @@ def encrypt():
         print(*encrypted, sep="-")
         print(f'Public Keys = {a} and {n}')
     except:
-        sys.stdout.write("Unknown Error Occurred during encryption\n")
-        exit()
+        sys.exit("ERROR: Encryption failed...\nTerminating the program")
 
 
 def decrypt():
@@ -131,8 +130,7 @@ def decrypt():
             print(*decrypted, sep="-")
             print(f'Private Keys = {p1}, {p2}, and {b}')
     except:
-        sys.stdout.write("Unknown Error Occurred during decryption\n")
-        exit()
+        sys.exit("ERROR: Decryption failed...\nTerminating the program")
 
 
 if __name__ == '__main__':
@@ -146,5 +144,4 @@ if __name__ == '__main__':
     elif key == 'D':
         decrypt()
     else:
-        sys.stdout.write("Error: Keyboard Interruption (Wrong Key Pressed)\n")
-        exit()
+        sys.exit("ERROR: Wrong input...\nTerminating the program")
