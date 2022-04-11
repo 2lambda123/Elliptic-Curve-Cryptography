@@ -539,7 +539,7 @@ Let $\alpha: E(C) \longrightarrow E(C)$ be complex conjugation: $\alpha(x,y) = (
 The main goal of this section is to prove the 3.1.2 Theorem, mathematically.
 \subsection{The Weil Pairing}
 The Weil Pairing on the $n$-torsion on an elliptic curve is a major tool in studying elliptic curves. It is also used to attack the discrete logarithm problem for elliptic curves. \par
-Let $E$ be an elliptic curve over a field $K$ and let $n$ be an integer not divisible by the characteristic of $K$ Then $E[n] \simeq \mathbb{Z}_n \oplus \mathbb{Z}_n$. Let 
+Let $E$ be an elliptic curve over a field $K$ and let $n$ be an integer not divisible by the characteristic of $K$. Then $E[n] \simeq \mathbb{Z}_n \oplus \mathbb{Z}_n$. Let 
 \begin{center} $\mu_n = \{x \in \bar{K} \: | \: x^n = 1\}$ \end{center}
 be the group of $n$th roots of unity in $\bar{K}$. Sine the characteristic of $K$ does not divide $n$, the equation $x^n=1$ has no multiple roots, hence has $n$ roots in $\bar{K}$. Therefore, $\mu_n$ is a cyclic group of order $n$. And, any generator $\zeta$ of $\mu_n$ is called a \textbf{primitive $n$th root of unity}. This is equivalent to saying that $\zeta^k = 1$ iff $n$ divided $k$. 
 \subsubsection{Theorem}
@@ -547,9 +547,9 @@ Let $E$ be an elliptic curve defined over a field $K$ and let $n$ be a positive 
 \begin{center} $e_n: E[n] \times E[n] \rightarrow \mu_n$, \end{center}
 called the \textbf{Weil pairing}, that satisfies the following properties:
 \begin{enumerate}
-	\item $e_n$ is bilinear is each variable. 
+	\item $e_n$ is bilinear is each variable \newline(a function combining elements of two vector spaces to yield an element of a third vector space.
 	\begin{center} 
-	$e_n(S_1+S2,T) = e_n(S_1,T)e_N(S_2,T)$
+	$e_n(S_1+S_2,T) = e_n(S_1,T)e_N(S_2,T)$
 	\end{center}
 	and
 	\begin{center}
@@ -592,5 +592,24 @@ deg$(a\alpha+b\beta) = a^2$ deg $\alpha + b^2$ deg $\beta + ab($deg$(\alpha+\bet
 \end{center}
 \par $\square$
 \subsection {The Tate-Lichtenbaum Pairing}
+From the Weil pairing, we can also defince a pairing that can be used in case where the full $n$-torsion is not avilable. Thus, cannpt apply the Weil pairing directly.
+\subsubsection{Theorem}
+Let $E$ be an elliptic curve over $\mathbb{F}_q$. Let $n$ be an integer such that $n\: | \: q-1$. Denote by $E(\mathbb{F}_q)[n]$ the elements of $E(\mathbb{F}_q)$ of order dividing $n$, and let $\mu_n=\{x\in\mathbb{F}_q \: |\:x^n=1\}$. Let $P\in E(\mathbb{F}_q)[n]$ and $Q\in E(\mathbb{F}_q)$ and choose $R \in E(\mathbb{F}_q)$ satisfying $nE=\mathbb{Q}$. Denote by $e_n$ the $n$th Weil pairing and by $\phi = \phi_q$ the $q$th power Frobenius endomorphism. Define
+\begin{center} $\tau(P,q)=e_n(P,R-\phi(R)).$ \end{center}
+Then
+\begin{center}
+$\tau_n:E(\mathbb{F}_q)]n] \times E(\mathbb{F}_q)/nE(\mathbb{F}_q) \longrightarrow \mu_n$
+\end{center}
+is a well defined nondegenerate bilinear pairing. $\square$ \par
+The pairing of the theorem is called the \textbf{modified Tate-Lichtenbaum pairing}. The original \textbf{Tate-Lichtenbaum pairing} is obtained by taking the $n$th root of $\tau_n$, thus obtaining a pairing,
+\begin{center}
+$\langle \cdot , \cdot \rangle :E(\mathbb{F}_q) \times E(\mathbb{F}_q)/nE(\mathbb{F}_q) \longrightarrow F_q^{\times}/(F_q^{\times})^n.$
+\end{center}
+The pairing $\tau_n$ is better suited for computations since it gives a definite answer, rather than a coset in $\mathbb{F}_q^{\times}$ mod $n$th powers. These pairings can be computed very fastly.\par
+The term $\tau_n(P,q)$ should be written as $\tau_n(P,Q+nE(\mathbb{F}_q))$, since an element of $E(\mathbb{F}_q/nE(\mathbb{F}_q)$ has the form $Q+nE(\mathbb{F}_q)$. \par 
+The Tate-Lichtenbaum pairing can be used in some situations where the Weil pairing does not apply. The Weil pairing needs $E[n] \subseteq E(\mathbb{F}_q)$, that is, $\mu_n \subseteq F_q^{\times}$, by Corollary 3.3.3. The Tate-Lichtenbaum pairing required that $\mu_n \subseteq F_q^{\times}$, but only needs a point of order $n$, rather than all of $E[n]$, to be in $E(\mathbb{F}_q^{\times})$. 
+\newpage
+\section {Chapter 4}
+\section*{Elliptic Curves over Finite Fields}
 
 \end{document}
