@@ -124,7 +124,7 @@ def decrypt():
         else:
             b = inverse_mod(a, phi_n)
             print(f'Inverse Modulo of {a}, ϕ({n}) = {b}')
-            for msg in message.split('-'):
+            for msg in message:
                 decrypted.append(mod(int(msg), b, n))
             sys.stdout.write("The decrypted message is: \n")
             print(*decrypted, sep="-")
