@@ -14,3 +14,7 @@ An ECC encryption of <b>256-bit</b> length is equivalent to <b>3072-bit</b> leng
 
 Here, we tried to show the important mathematical concepts required for better understanding of Elliptic Curve Cryptography and 
 implementations of few mathematical concepts regarding Number Theory and Cryptography.
+
+### Reference Book
+Elliptic Curves: Number Theory and Cryptography, Second Edition
+> Book by Lawrence C. Washington
