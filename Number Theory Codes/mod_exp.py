@@ -1,4 +1,4 @@
-# python code for calculation modular exponentiation
+# python code for calculating modular exponentiation
 # given the values of a, m, n (n in binary)
 # calculate a^n mod(n)
 
