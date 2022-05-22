@@ -5,8 +5,6 @@ import random
 from math import sqrt
 from typing import Tuple
 
-sys.setrecursionlimit(1000000000)
-
 
 # Checking whether the given number is prime or not
 # Time Complexity - O(sqrt(n))
@@ -75,7 +73,7 @@ def encrypt():
     sys.stdout.write("NOTE: For whitespace, type '-'\n")
     try:
         message = input("Enter the text that is to be encrypted: ")
-        message.split('-')
+        message = message.split('-')
         encrypted = []
         p1 = int(input("Enter the prime p1: "))
         if isprime(p1) != 1:
@@ -87,14 +85,10 @@ def encrypt():
             exit()
         n = p1 * p2
         phi_n = euler_totient(p1, p2)
-        relatively_prime = []
         for a in range(2, phi_n):
-            if gcd(a, phi_n) == 1:
-                relatively_prime.append(a)
-        rand = int(random.random() * len(relatively_prime))
-        a = relatively_prime[rand]
-        for msg in message.split('-'):
-            encrypted.append(mod(int(msg), a, n))
+            if gcd(a, phi_n) == 1: break
+        for msg in message:
+            encrypted.append(pow(int(msg), a, n))
         sys.stdout.write("The encrypted message is: \n")
         print(*encrypted, sep="-")
         print(f'Public Keys = {a} and {n}')
@@ -106,7 +100,7 @@ def decrypt():
     sys.stdout.write("NOTE: For whitespace, type '-'\n")
     try:
         message = input("Enter the text that is to be decrypted: ")
-        message.split('-')
+        message = message.split('-')
         decrypted = []
         sys.stdout.write("Decryption of RSA Crypto-system requires 2 Public Keys, 'a' and 'n'\n")
         a = int(input("Enter the value of a: "))
@@ -122,10 +116,10 @@ def decrypt():
             print(f'ERROR: The key \'{a}\' cannot be a Public Key for this RSA System\n')
             exit()
         else:
-            b = inverse_mod(a, phi_n)
+            b = pow(a, -1, phi_n)
             print(f'Inverse Modulo of {a}, ϕ({n}) = {b}')
             for msg in message:
-                decrypted.append(mod(int(msg), b, n))
+                decrypted.append(pow(int(msg), b, n))
             sys.stdout.write("The decrypted message is: \n")
             print(*decrypted, sep="-")
             print(f'Private Keys = {p1}, {p2}, and {b}')
