@@ -129,7 +129,6 @@ def decrypt():
 
 if __name__ == '__main__':
     sys.stdout.write("The Program only works for numbers. Still in development phase\n")
-    sys.stdout.write("The system encrypts and decrypts only unto 16bit OS 4B\n")
     sys.stdout.write("For Encrypting the message Press e/E\n")
     sys.stdout.write("For Decrypting the message Press d/D\n")
     key = input("Press any key to perform action: ").upper()
