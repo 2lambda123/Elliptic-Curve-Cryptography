@@ -1,5 +1,8 @@
-# generates and store the first 1,000,000 prime numbers to a text file
+# generates and store the first 15,000,000 prime numbers to a text file
 # and uses it to generate keys for RSA Cryto-system
+# The 15,000,000th prime is 275,604,541
+# NOTE: This program takes a considerable amount of time to generates the 15 million primes
+# all the primes have been generated and stored in primes.txt in advance
 
 from math import sqrt, log2
 
@@ -30,5 +33,5 @@ file = open('primes.txt', 'w')
 for p in primes[:-1]:
     file.write(str(p) + ', ')
 file.write(str(primes[-1]))
-file.close
+file.close()
 

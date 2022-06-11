@@ -6,13 +6,6 @@ from math import sqrt, log2
 from typing import Tuple
 
 
-primes = []
-file = open('primes.txt', 'r')
-for p in file.read().split(', '):
-    primes.append(int(p))
-file.close
-
-
 # Checking whether the given number is prime or not
 # Time Complexity - O(sqrt(n))
 def isprime(N):
@@ -77,6 +70,11 @@ def inverse_mod(a, phi_n):
 
 # generate prime numbers from 2 to 1,000,000th prime number
 def key_generator():
+    primes = []
+    file = open('primes.txt', 'r')
+    for p in file.read().split(', '):
+        primes.append(int(p))
+    file.close()
     cipher = random.randint(1, 100)
     p1_idx = random.randint(0, len(primes)-1)
     p2_idx = random.randint(0, len(primes)-1)
@@ -90,10 +88,10 @@ def encrypt():
     try:
         message = input("Enter the text that is to be encrypted: ")
         encrypted = []
+        sys.stdout.write("Message encoding successful\n")
         p1, p2, c = key_generator()
         n = p1 * p2
         phi_n = euler_totient(p1, p2)
-        sys.stdout.write("Message encoding successful\n")
         a = phi_n // c
         while gcd(a, phi_n) != 1:
             a -= 1
