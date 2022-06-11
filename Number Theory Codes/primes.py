@@ -16,9 +16,11 @@ def isprime(N):
 
 def generate_primes():
     primes = []
+    i = 2
     while len(primes) < 1000000:
         if isprime(i) == 1:
             primes.append(i)
+        i += 1
     return primes
 
 
