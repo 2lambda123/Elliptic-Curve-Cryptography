@@ -17,4 +17,5 @@ implementations of few mathematical concepts regarding Number Theory and Cryptog
 
 ### Reference Book
 Elliptic Curves: Number Theory and Cryptography, Second Edition
-> Book by Lawrence C. Washington
+> Book by Lawrence C. Washington <br>
+> Cryptography and Network Securyt by William Stallings
