@@ -30,11 +30,6 @@ import time
 # the time module is to check for the time taken to run the program
 
 
-Machine = sys.maxsize
-MAX = 15485863
-num_list = [i for i in range(MAX)]
-
-
 # A precalculated smallest prime factors
 # O(n.log(log n)) -> Time Complexity
 def sieve(N):
@@ -89,18 +84,19 @@ def all_p_roots(P, N):
 #    print(*p_roots, sep=', ')
 
 
+if __name__ == '__main__':
+    p = int(input("Prime Number p: "))
+    num_list = [i for i in range(p+1)]
+    if rsa.isprime(p) != 1:
+        sys.exit("ERROR: Input number is not a prime...\nTerminating the program")
+    elif p > 15485863:
+        sys.exit("ERROR: Input prime is too large, try primes less than (15485863)...\nTerminating the program")
+    else:
+        start = time.process_time()
+        factor = pow(p, 2)
+        factor = p + 1
+        all_p_roots(p, factor)
+        small_p_root(p, factor)
 
-p = int(input("Prime Number p: "))
-if rsa.isprime(p) != 1:
-    sys.exit("ERROR: Input number is not a prime...\nTerminating the program")
-elif p > 15485863:
-    sys.exit("ERROR: Input prime is too large, try primes less than (15485863)...\nTerminating the program")
-else:
-    start = time.process_time()
-    factor = pow(p, 2)
-    factor = p + 1
-    all_p_roots(p, factor)
-    small_p_root(p, factor)
-
-TIME = time.process_time() - start
-print(f'Time taken to execute the program {round(TIME, 4)} s')
+    TIME = time.process_time() - start
+    print(f'Time taken to execute the program {round(TIME, 4)} s')

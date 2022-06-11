@@ -30,10 +30,11 @@ def euclidean_algorithm():
     print(f'GCD of given two numbers is {A}')
 
 
-print("Calculating the value of a^n mod(m)")
-a = int(input("Enter the value of a: "))
-n = int(input("Enter the value of power(n): "))
-m = int(input("Enter the value of modulus(m): "))
-value = modular_exponentiation(a, n, m)
-print(f'The value of {a}^{n} mod({m}) is {value}')
+if __name__ == '__main__':
+    print("Calculating the value of a^n mod(m)")
+    a = int(input("Enter the value of a: "))
+    n = int(input("Enter the value of power(n): "))
+    m = int(input("Enter the value of modulus(m): "))
+    value = modular_exponentiation(a, n, m)
+    print(f'The value of {a}^{n} mod({m}) is {value}')
 
