@@ -71,10 +71,16 @@ def inverse_mod(a, phi_n):
 # generate prime numbers from 2 to 1,000,000th prime number
 def key_generator():
     primes = []
-    file = open('primes.txt', 'r')
+    
+    file = open('primes1.txt', 'r')
     for p in file.read().split(', '):
         primes.append(int(p))
     file.close()
+    file = open('primes2.txt', 'r')
+    for p in file.read().split(', '):
+        primes.append(int(p))
+    file.close()
+    
     cipher = random.randint(1, 100)
     p1_idx = random.randint(0, len(primes)-1)
     p2_idx = random.randint(0, len(primes)-1)
